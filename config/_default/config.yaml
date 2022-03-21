@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: anna # Website name
+title: anna re anna # Website name
 baseurl: 'https://gautammilan.github.io/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 
