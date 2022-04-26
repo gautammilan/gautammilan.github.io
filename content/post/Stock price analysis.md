@@ -21,7 +21,8 @@ Time series data are simply measurements or events that are tracked, monitored, 
 
 Nabil bank is a bank located in Nepal, it's been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.
 
-![Image of the data](/images/stock/stock_dataframe.png#center)
+![Image of the data](/images/stock_dataframe.png#center)
+
 ## Preprocessing 
 
 ### 1. Normalization
@@ -42,11 +43,11 @@ The main features of the input windows are:
 Depending on the task and type of model we may want to generate a variety of data windows. Here are some examples:
 1.	A model that makes a prediction one hour into the future given six days of history,  would need a window like this:
 
-![Example_1](/images/stock/example1.png#center)
+![Example_1](/images/example1.png#center)
 
 2.	Similarly, to make a single prediction 24 days into the future, given 24 days of history, we might define a window like this:
 
-![Example_2](/images/stock/example2.png#center)
+![Example_2](/images/example2.png#center)
 
 [source](https://www.tensorflow.org/tutorials/)
 
@@ -88,24 +89,24 @@ def dense_func(input_shape):
   return model
  {{< /highlight >}}
 
-![Architecture](/images/stock/desce_code.png#center)
+![Architecture](/images/desce_code.png#center)
 ##### a. Hyperparameter tuning
 One of the most important hyperparameter for stock price prediction is the number of days that the model sees to make future prediction ie input_width. This hyperparameter value is calculated by training the model on different number of input width and the model which produces lowest loss it is selected.
 
-![Input width vs Mean square Error(MSE)](\images\stock\hyperparameter_for_dense_model.png#center)
+![Input width vs Mean square Error(MSE)](/images/hyperparameter_for_dense_model.png#center)
 
 We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.
 
 
 ##### b. Evaluation 
 At input width 3, the label and prediction for Close value of stock look like this:
-![label vs prediction](images\stock\Dense_model_ground_truth_vs_prediction.png#center)
+![label vs prediction](/images/Dense_model_ground_truth_vs_prediction.png#center)
 
 
 #### 1.2 LSTM model
 A Recurrent Neural Network (RNN) is a type of neural network well-suited to time series data. RNNs process a time series step-by-step, maintaining an internal state from time step to time step.Let’s see understand how RNN will process time series data:
 
-![LSTM modelS](images\stock\RNN.png#center)
+![LSTM modelS](/imagess/RNN.png#center)
 
 Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low]  as input for the first day and predict the Close value for the second day. Similarly, a second time stamp will take the feature vector generated from the first time stamp and second days inputs to predict the 3rd step value and so on until it predicts one step into the future.
 
@@ -124,11 +125,11 @@ def lstm_model(input_shape):
 
  {{< /highlight >}}
 
-![Architecture](\images\stock\lstm_code.png#center)
+![Architecture](/images/lstm_code.png#center)
 
 ##### a. Evaluation
 The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let's look it label and prediction plot:
-![label vs prediction](images\stock\rnn_ground_truth_vs_prediction.png#center)
+![label vs prediction](/images/stock/rnn_ground_truth_vs_prediction.png#center)
 
 
 ### 2 Multi-step model
@@ -139,9 +140,11 @@ In a multi-step prediction, the model needs to learn to predict a range of futur
 
 2.2.	Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can't directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date. 
 
+![Autoregressive Model](/images/autoregressive.png#center)
+
 For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn't have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.
 
-![Autoregressive Model](images\stock\autoregressive.png#center)
+
 
 {{< highlight go >}} 
 class denseLayers(tf.keras.layers.Layer):
@@ -215,12 +218,12 @@ In the code, we can see we send the input to an LSTM layer which produces an out
 #### a. Hyperparamter Tuning
 In previous single step model, the minimum value of MSE was obtain when the input width is small but interesting in autoregressive model as the input width increase the MSE reduces. Therefore, the model performs the best when it's looking large number of previous date data. 
 
-![Input width vs Mean square Error(MSE)](images\stock\hyperparameter_for_autoregressiv_model.png#center)
+![Input width vs Mean square Error(MSE)](/images/hyperparameter_for_autoregressiv_model.png#center)
 
 We can see the model performs the best when the input width is 31.
 
 #### b. Evaluation
-![Plotting Close value for consecutive days](images\stock\autoregressive_prediction.png#center)
+![Plotting Close value for consecutive days](/images/autoregressive_prediction.png#center)
 
 The model is taking a consecutive input of the past 31 days and it is predicting the next 3 days. The difference between the actual price and the predicted price is not much. Therefore depending upon the task we can select an appropriate model and do the task.
 
