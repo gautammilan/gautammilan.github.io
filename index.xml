@@ -9,61 +9,323 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Welcome to Wowchemy, the website builder for Hugo</title><link>https://gautammilan.github.io/post/getting-started/</link><pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/post/getting-started/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
-&lt;ol>
-&lt;li>The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li>
-&lt;li>The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong>no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong> and having &lt;strong>flexibility to later add even deeper personalization with HTML and CSS&lt;/strong>&lt;/li>
-&lt;li>You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li>
-&lt;/ol>
-&lt;figure id="figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device">
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Stock Price Analysis On Nabil Bank</title><link>https://gautammilan.github.io/project/test/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/test/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>In statistical terms, time series forecasting is the process of analyzing the time series data using statistics and modeling to make predictions and informed strategic decisions. It falls under Quantitative Forecasting. Examples of Time Series Forecasting are weather forecast over next week, forecasting the closing price of a stock each day etc. In this article we will see different types of models which can be used for this analysis and pick what is best for what situations.&lt;/p>
+&lt;h2 id="time-series-data">Time series data&lt;/h2>
+&lt;p>Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data. We will be taking stock price data to perform our analysis.&lt;/p>
+&lt;p>Nabil bank is a bank located in Nepal, it&amp;rsquo;s been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.&lt;/p>
+&lt;p>
+&lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png" alt="The template is mobile first with a responsive design to ensure that your site looks stunning on every device." loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;figcaption>
-The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
-&lt;/figcaption>&lt;/figure>
-&lt;h2 id="get-started">Get Started&lt;/h2>
-&lt;ul>
-&lt;li>👉 &lt;a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">&lt;strong>Create a new site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>📚 &lt;a href="https://wowchemy.com/docs/" target="_blank" rel="noopener">&lt;strong>Personalize your site&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>💬 &lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Chat with the &lt;strong>Wowchemy community&lt;/strong>&lt;/a> or &lt;a href="https://discourse.gohugo.io" target="_blank" rel="noopener">&lt;strong>Hugo community&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>🐦 Twitter: &lt;a href="https://twitter.com/wowchemy" target="_blank" rel="noopener">@wowchemy&lt;/a> &lt;a href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">@GeorgeCushen&lt;/a> &lt;a href="https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query" target="_blank" rel="noopener">#MadeWithWowchemy&lt;/a>&lt;/li>
-&lt;li>💡 &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/issues" target="_blank" rel="noopener">Request a &lt;strong>feature&lt;/strong> or report a &lt;strong>bug&lt;/strong> for &lt;em>Wowchemy&lt;/em>&lt;/a>&lt;/li>
-&lt;li>⬆️ &lt;strong>Updating Wowchemy?&lt;/strong> View the &lt;a href="https://wowchemy.com/docs/hugo-tutorials/update/" target="_blank" rel="noopener">Update Tutorial&lt;/a> and &lt;a href="https://wowchemy.com/updates/" target="_blank" rel="noopener">Release Notes&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="crowd-funded-open-source-software">Crowd-funded open-source software&lt;/h2>
-&lt;p>To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p>
-&lt;h3 id="-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans">&lt;a href="https://wowchemy.com/plans/" target="_blank" rel="noopener">❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a>&lt;/h3>
-&lt;p>As a token of appreciation for sponsoring, you can &lt;strong>unlock &lt;a href="https://wowchemy.com/plans/" target="_blank" rel="noopener">these&lt;/a> awesome rewards and extra features 🦄✨&lt;/strong>&lt;/p>
-&lt;h2 id="ecosystem">Ecosystem&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>&lt;a href="https://github.com/wowchemy/hugo-academic-cli" target="_blank" rel="noopener">Hugo Academic CLI&lt;/a>:&lt;/strong> Automatically import publications from BibTeX&lt;/li>
-&lt;/ul>
-&lt;h2 id="inspiration">Inspiration&lt;/h2>
-&lt;p>&lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Check out the latest &lt;strong>demo&lt;/strong>&lt;/a> of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href="https://wowchemy.com/user-stories/" target="_blank" rel="noopener">view the &lt;strong>showcase&lt;/strong>&lt;/a> of personal, project, and business sites.&lt;/p>
-&lt;h2 id="features">Features&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Page builder&lt;/strong> - Create &lt;em>anything&lt;/em> with &lt;a href="https://wowchemy.com/docs/page-builder/" target="_blank" rel="noopener">&lt;strong>widgets&lt;/strong>&lt;/a> and &lt;a href="https://wowchemy.com/docs/content/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>elements&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Edit any type of content&lt;/strong> - Blog posts, publications, talks, slides, projects, and more!&lt;/li>
-&lt;li>&lt;strong>Create content&lt;/strong> in &lt;a href="https://wowchemy.com/docs/content/writing-markdown-latex/" target="_blank" rel="noopener">&lt;strong>Markdown&lt;/strong>&lt;/a>, &lt;a href="https://wowchemy.com/docs/import/jupyter/" target="_blank" rel="noopener">&lt;strong>Jupyter&lt;/strong>&lt;/a>, or &lt;a href="https://wowchemy.com/docs/install-locally/" target="_blank" rel="noopener">&lt;strong>RStudio&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Plugin System&lt;/strong> - Fully customizable &lt;a href="https://wowchemy.com/docs/customization/" target="_blank" rel="noopener">&lt;strong>color&lt;/strong> and &lt;strong>font themes&lt;/strong>&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Display Code and Math&lt;/strong> - Code highlighting and &lt;a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="noopener">LaTeX math&lt;/a> supported&lt;/li>
-&lt;li>&lt;strong>Integrations&lt;/strong> - &lt;a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics&lt;/a>, &lt;a href="https://disqus.com" target="_blank" rel="noopener">Disqus commenting&lt;/a>, Maps, Contact Forms, and more!&lt;/li>
-&lt;li>&lt;strong>Beautiful Site&lt;/strong> - Simple and refreshing one page design&lt;/li>
-&lt;li>&lt;strong>Industry-Leading SEO&lt;/strong> - Help get your website found on search engines and social media&lt;/li>
-&lt;li>&lt;strong>Media Galleries&lt;/strong> - Display your images and videos with captions in a customizable gallery&lt;/li>
-&lt;li>&lt;strong>Mobile Friendly&lt;/strong> - Look amazing on every screen with a mobile friendly version of your site&lt;/li>
-&lt;li>&lt;strong>Multi-language&lt;/strong> - 34+ language packs including English, 中文, and Português&lt;/li>
-&lt;li>&lt;strong>Multi-user&lt;/strong> - Each author gets their own profile page&lt;/li>
-&lt;li>&lt;strong>Privacy Pack&lt;/strong> - Assists with GDPR&lt;/li>
-&lt;li>&lt;strong>Stand Out&lt;/strong> - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li>
-&lt;li>&lt;strong>One-Click Deployment&lt;/strong> - No servers. No databases. Only files.&lt;/li>
-&lt;/ul>
-&lt;h2 id="themes">Themes&lt;/h2>
-&lt;p>Wowchemy and its templates come with &lt;strong>automatic day (light) and night (dark) mode&lt;/strong> built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href="https://academic-demo.netlify.com/" target="_blank" rel="noopener">Demo&lt;/a> to see it in action! Day/night mode can also be disabled by the site admin in &lt;code>params.toml&lt;/code>.&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/customization" target="_blank" rel="noopener">Choose a stunning &lt;strong>theme&lt;/strong> and &lt;strong>font&lt;/strong>&lt;/a> for your site. Themes are fully customizable.&lt;/p>
-&lt;h2 id="license">License&lt;/h2>
-&lt;p>Copyright 2016-present &lt;a href="https://georgecushen.com" target="_blank" rel="noopener">George Cushen&lt;/a>.&lt;/p>
-&lt;p>Released under the &lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT&lt;/a> license.&lt;/p></description></item><item><title>Slides</title><link>https://gautammilan.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="preprocessing">Preprocessing&lt;/h2>
+&lt;h3 id="1-normalization">1. Normalization&lt;/h3>
+&lt;p>We need to normalize between 0-1, to remove the problem which arises if the features having in different scales. But when normalizing validate and test data don&amp;rsquo;t use the validate.max() or text.max() and validate.min() or text.min() for their respective normalization use train.max and train.min for both of them. Because we can&amp;rsquo;t look at the validate or test dataset they are unknown to us. The important thing to note here is that the normalization has been done on the input feature only not on the label, the model will predict the actual value of stock.&lt;/p>
+&lt;h3 id="2-sliding-window">2. Sliding window&lt;/h3>
+&lt;p>To perform Supervised learning the dataset should have inputs and its corresponding label. Data windowing is a popular technique for converting historical data like time series to data suitable for supervised learning. It works as it sounds, we select a window for inputs and feed the model the data which has been selected into that window and the model will try to predict the label for that window.
+The main features of the input windows are:&lt;/p>
+&lt;p>• The width (number of time steps) of the input and label windows.&lt;/p>
+&lt;p>• The time offset between them.&lt;/p>
+&lt;p>• Which features are used as inputs, labels, or both.&lt;/p>
+&lt;p>Depending on the task and type of model we may want to generate a variety of data windows. Here are some examples:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>A model that makes a prediction one hour into the future given six days of history, would need a window like this:
+![Example_1](/images/stock/Screenshot 2022-04-22 152711.png#center)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Similarly, to make a single prediction 24 days into the future, given 24 days of history, we might define a window like this:
+![Example_3](/images/stock/Screenshot 2022-04-22 152644.png#center)
+ImageSource((&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">https://www.tensorflow.org/tutorials/&lt;/a>)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Therefore, depending upon the task and model we can generate varieties of inputs which helps to reduce the redundancy of code as by defining an data window using a class.&lt;/p>
+&lt;h2 id="models">Models&lt;/h2>
+&lt;p>In time series forecasting depending upon the number of steps we are going to do the prediction the models can be classified into two types:&lt;/p>
+&lt;h3 id="1-single-step-model">1. Single step Model&lt;/h3>
+&lt;p>In single step model, model will look one step into the future. For example given all the past one month of stock data model will predict what will be the stock value tomorrow. For this task we will be using models like:&lt;/p>
+&lt;h4 id="11dense-model">1.1 Dense model:&lt;/h4>
+&lt;p>A single dense layer is a single layer of fully connected neural network. Here, we will be sending our Inputs of specific input width into multiple dense layer and finally the output of these dense layer will be send though a single neuron dense layer to produce a single step output. It is an regression problem where we take Open, Close, Low and High as input to predict the closing value of the stock.&lt;/p>
+&lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
+&lt;p>On of the most important hyperparameter for stock price prediction is the number of days that the model sees to make future prediction ie input_width. This hyperparameter value is calculated by training the model on different number of days and the model which produces lowest loss it is selected.&lt;/p>
+&lt;p>![Input width vs Mean square Error(MSE)](/images/stock/hyperparameter_for dense_model.png#center)&lt;/p>
+&lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
+&lt;h5 id="b-evaluation">b. Evaluation&lt;/h5>
+&lt;p>At input width 3, the label and prediction for Close value of stock look like this:
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cDense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
+&lt;p>A Recurrent Neural Network (RNN) is a type of neural network well-suited to time series data. RNNs process a time series step-by-step, maintaining an internal state from time step to time step.Let’s see understand how RNN will process time series data:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cRNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for a day and predict the Close value for the next day. Similarly, at time stamp second it will take the feature vector generated from the first time stamp and predict the 3rd step value and so on until it predicts one step in the future.&lt;/p>
+&lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
+&lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5crnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
+&lt;p>In a multi-step prediction, the model needs to learn to predict a range of future values. Thus, unlike a single-step model, where only a single future point is predicted, a multi-step model predicts a sequence of the future values. There are two rough approaches to this:&lt;/p>
+&lt;p>2.1. Single-shot Model
+Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
+&lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
+&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h4 id="a-hyperparamter-tuning">a. Hyperparamter Tuning&lt;/h4>
+&lt;p>In previous single step model, the minimum value of MSE was obtain when the input width is small but interesting in autoregressive model as the input width increase the MSE reduces. Therefore, the model performs the best when it&amp;rsquo;s looking large number of previous date data.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5chyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
+&lt;h4 id="b-evaluation-1">b. Evaluation&lt;/h4>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/post/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>In statistical terms, time series forecasting is the process of analyzing the time series data using statistics and modeling to make predictions and informed strategic decisions. It falls under Quantitative Forecasting. Examples of Time Series Forecasting are weather forecast over next week, forecasting the closing price of a stock each day etc. In this article we will see different types of models which can be used for this analysis and pick what is best for what situations.&lt;/p>
+&lt;h2 id="time-series-data">Time series data&lt;/h2>
+&lt;p>Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data. We will be taking stock price data to perform our analysis.&lt;/p>
+&lt;p>Nabil bank is a bank located in Nepal, it&amp;rsquo;s been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="preprocessing">Preprocessing&lt;/h2>
+&lt;h3 id="1-normalization">1. Normalization&lt;/h3>
+&lt;p>We need to normalize between 0-1, to remove the problem which arises if the features having in different scales. But when normalizing validate and test data don&amp;rsquo;t use the validate.max() or text.max() and validate.min() or text.min() for their respective normalization use train.max and train.min for both of them. Because we can&amp;rsquo;t look at the validate or test dataset they are unknown to us. The important thing to note here is that the normalization has been done on the input feature only not on the label, the model will predict the actual value of stock.&lt;/p>
+&lt;h3 id="2-sliding-window">2. Sliding window&lt;/h3>
+&lt;p>To perform Supervised learning the dataset should have inputs and its corresponding label. Data windowing is a popular technique for converting historical data like time series to data suitable for supervised learning. It works as it sounds, we select a window for inputs and feed the model the data which has been selected into that window and the model will try to predict the label for that window.
+The main features of the input windows are:&lt;/p>
+&lt;p>• The width (number of time steps) of the input and label windows.&lt;/p>
+&lt;p>• The time offset between them.&lt;/p>
+&lt;p>• Which features are used as inputs, labels, or both.&lt;/p>
+&lt;p>Depending on the task and type of model we may want to generate a variety of data windows. Here are some examples:&lt;/p>
+&lt;ol>
+&lt;li>A model that makes a prediction one hour into the future given six days of history, would need a window like this:&lt;/li>
+&lt;/ol>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;ol start="2">
+&lt;li>Similarly, to make a single prediction 24 days into the future, given 24 days of history, we might define a window like this:&lt;/li>
+&lt;/ol>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">source&lt;/a>&lt;/p>
+&lt;p>Therefore, depending upon the task and model we can generate varieties of inputs which helps to reduce the redundancy of code as by defining an data window using a class.&lt;/p>
+&lt;h2 id="models">Models&lt;/h2>
+&lt;p>In time series forecasting depending upon the number of steps we are going to do the prediction for the models can be classified into two types:&lt;/p>
+&lt;h3 id="1-single-step-model">1. Single step Model&lt;/h3>
+&lt;p>In single step model, model will look one step into the future. For example given all the past one month of stock data model will predict what will be the stock value tomorrow. For this task we will be using models like:&lt;/p>
+&lt;h4 id="11dense-model">1.1 Dense model:&lt;/h4>
+&lt;p>A single dense layer is a single layer of fully connected neural network. Here, we will be sending our Inputs of specific input width into multiple dense layer and finally the output of these dense layer will be send though a single neuron dense layer to produce a single step output. It is an regression problem where we take Open, Close, Low and High as input to predict the closing value of the stock.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">dense_func&lt;/span>(&lt;span style="color:#a6e22e">input_shape&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">input&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Input&lt;/span>(&lt;span style="color:#a6e22e">shape&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">constant&lt;/span>(&lt;span style="color:#a6e22e">input_shape&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Flatten&lt;/span>()(&lt;span style="color:#a6e22e">input&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">Basically&lt;/span> &lt;span style="color:#a6e22e">there&lt;/span> &lt;span style="color:#a6e22e">are&lt;/span> &lt;span style="color:#a6e22e">four&lt;/span> &lt;span style="color:#a6e22e">dense&lt;/span> &lt;span style="color:#a6e22e">layer&lt;/span> &lt;span style="color:#a6e22e">each&lt;/span> &lt;span style="color:#a6e22e">followed&lt;/span> &lt;span style="color:#a6e22e">by&lt;/span> &lt;span style="color:#a6e22e">an&lt;/span> &lt;span style="color:#a6e22e">dropout&lt;/span> &lt;span style="color:#a6e22e">layer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">556&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.2&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">228&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.2&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">128&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.2&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">64&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.2&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">1&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">model&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Model&lt;/span>(&lt;span style="color:#a6e22e">inputs&lt;/span>= &lt;span style="color:#a6e22e">input&lt;/span>,&lt;span style="color:#a6e22e">outputs&lt;/span>= &lt;span style="color:#a6e22e">output&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">model&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
+&lt;p>One of the most important hyperparameter for stock price prediction is the number of days that the model sees to make future prediction ie input_width. This hyperparameter value is calculated by training the model on different number of input width and the model which produces lowest loss it is selected.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5chyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
+&lt;h5 id="b-evaluation">b. Evaluation&lt;/h5>
+&lt;p>At input width 3, the label and prediction for Close value of stock look like this:
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cDense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
+&lt;p>A Recurrent Neural Network (RNN) is a type of neural network well-suited to time series data. RNNs process a time series step-by-step, maintaining an internal state from time step to time step.Let’s see understand how RNN will process time series data:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cRNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for the first day and predict the Close value for the second day. Similarly, a second time stamp will take the feature vector generated from the first time stamp and second days inputs to predict the 3rd step value and so on until it predicts one step into the future.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">lstm_model&lt;/span>(&lt;span style="color:#a6e22e">input_shape&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inp&lt;/span>= &lt;span style="color:#a6e22e">Input&lt;/span>(&lt;span style="color:#a6e22e">shape&lt;/span>=&lt;span style="color:#a6e22e">input_shape&lt;/span>) &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">BATCH&lt;/span>,&lt;span style="color:#a6e22e">TIMESTAMP&lt;/span>,&lt;span style="color:#a6e22e">FEATURES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">LSTM&lt;/span>(&lt;span style="color:#ae81ff">128&lt;/span>,&lt;span style="color:#a6e22e">return_sequences&lt;/span>=&lt;span style="color:#a6e22e">False&lt;/span>,&lt;span style="color:#a6e22e">name&lt;/span>= &lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">LSTM&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">inp&lt;/span>)&lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">batch&lt;/span>,&lt;span style="color:#a6e22e">timestamp&lt;/span>,&lt;span style="color:#ae81ff">32&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">256&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>,&lt;span style="color:#a6e22e">name&lt;/span>= &lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">Dense1&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>=&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">64&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>,&lt;span style="color:#a6e22e">name&lt;/span>= &lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">Dense2&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>=&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">32&lt;/span>, &lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">relu&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>,&lt;span style="color:#a6e22e">name&lt;/span>= &lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">Dense3&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">out&lt;/span>= &lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>=&lt;span style="color:#ae81ff">1&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">model&lt;/span>= &lt;span style="color:#a6e22e">Model&lt;/span>(&lt;span style="color:#a6e22e">inp&lt;/span>,&lt;span style="color:#a6e22e">out&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">model&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5clstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
+&lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5crnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
+&lt;p>In a multi-step prediction, the model needs to learn to predict a range of future values. Thus, unlike a single-step model, where only a single future point is predicted, a multi-step model predicts a sequence of the future values. There are two rough approaches to this:&lt;/p>
+&lt;p>2.1. Single-shot Model
+Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
+&lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
+&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">class&lt;/span> &lt;span style="color:#a6e22e">denseLayers&lt;/span>(&lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Layer&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">super&lt;/span>().&lt;span style="color:#a6e22e">__init__&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense1&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">256&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense2&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">128&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense3&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">32&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense4&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">call&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>,&lt;span style="color:#a6e22e">inputs&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense1&lt;/span>(&lt;span style="color:#a6e22e">inputs&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense2&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense3&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense4&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">AutoRegressive_func&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">class&lt;/span> &lt;span style="color:#a6e22e">AutoRegressive&lt;/span>(&lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Model&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>, &lt;span style="color:#a6e22e">units&lt;/span>,&lt;span style="color:#a6e22e">output_steps&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">super&lt;/span>().&lt;span style="color:#a6e22e">__init__&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">unit&lt;/span>= &lt;span style="color:#a6e22e">units&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">out_step&lt;/span>= &lt;span style="color:#a6e22e">output_steps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm_cell&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">LSTMCell&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">unit&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm_layer&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">LSTM&lt;/span>(&lt;span style="color:#ae81ff">128&lt;/span>,&lt;span style="color:#a6e22e">return_state&lt;/span>=&lt;span style="color:#a6e22e">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense_layer&lt;/span>= &lt;span style="color:#a6e22e">denseLayers&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">call&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>,&lt;span style="color:#a6e22e">inputs&lt;/span>,&lt;span style="color:#a6e22e">training&lt;/span>= &lt;span style="color:#a6e22e">True&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">input&lt;/span>= [&lt;span style="color:#a6e22e">batch&lt;/span>,&lt;span style="color:#a6e22e">timestamp&lt;/span>,&lt;span style="color:#a6e22e">features&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">predictions&lt;/span>= []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>,&lt;span style="color:#a6e22e">state_h&lt;/span>,&lt;span style="color:#a6e22e">state_c&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm_layer&lt;/span>(&lt;span style="color:#a6e22e">inputs&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">output&lt;/span>=[&lt;span style="color:#a6e22e">batch&lt;/span>,&lt;span style="color:#a6e22e">units&lt;/span>], &lt;span style="color:#a6e22e">similarly&lt;/span> &lt;span style="color:#a6e22e">output&lt;/span>= &lt;span style="color:#a6e22e">state_h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">state&lt;/span>= [&lt;span style="color:#a6e22e">state_h&lt;/span>,&lt;span style="color:#a6e22e">state_c&lt;/span>] &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span> &lt;span style="color:#a6e22e">The&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">prediction&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense_layer&lt;/span>(&lt;span style="color:#a6e22e">output&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">predictions&lt;/span>.append(&lt;span style="color:#a6e22e">prediction&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">Now&lt;/span> &lt;span style="color:#a6e22e">iterating&lt;/span> &lt;span style="color:#a6e22e">through&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">every&lt;/span> &lt;span style="color:#a6e22e">step&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">i&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#66d9ef">range&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">out_step&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>,&lt;span style="color:#a6e22e">state&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm_cell&lt;/span>(&lt;span style="color:#a6e22e">output&lt;/span>,&lt;span style="color:#a6e22e">state&lt;/span>,&lt;span style="color:#a6e22e">training&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">prediction&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">dense_layer&lt;/span>(&lt;span style="color:#a6e22e">output&lt;/span>) &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">Prediction&lt;/span>= [&lt;span style="color:#a6e22e">batch&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#a6e22e">As&lt;/span> &lt;span style="color:#a6e22e">we&lt;/span> &lt;span style="color:#a6e22e">are&lt;/span> &lt;span style="color:#a6e22e">outputting&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Close&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#a6e22e">at&lt;/span> &lt;span style="color:#a6e22e">every&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span> &lt;span style="color:#a6e22e">stamp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">predictions&lt;/span>.append(&lt;span style="color:#a6e22e">prediction&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span> &lt;span style="color:#a6e22e">predictions&lt;/span>.&lt;span style="color:#a6e22e">shape&lt;/span> =&amp;gt; (&lt;span style="color:#a6e22e">time&lt;/span>, &lt;span style="color:#a6e22e">batch&lt;/span>, &lt;span style="color:#a6e22e">features&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">predictions&lt;/span> = &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">stack&lt;/span>(&lt;span style="color:#a6e22e">predictions&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span> &lt;span style="color:#a6e22e">predictions&lt;/span>.&lt;span style="color:#a6e22e">shape&lt;/span> =&amp;gt; (&lt;span style="color:#a6e22e">batch&lt;/span>, &lt;span style="color:#a6e22e">time&lt;/span>, &lt;span style="color:#a6e22e">features&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">predictions&lt;/span> = &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">transpose&lt;/span>(&lt;span style="color:#a6e22e">predictions&lt;/span>, [&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">predictions&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">AutoRegressive&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>In the code, we can see we send the input to an LSTM layer which produces an output and state of the last LSTM cell. These output and state vectors are sent to an LSTM cell to forecast the price for a single day. Similarly, the next LSTM cell executes the previous cell output as input, and the state of the previous cell gets initialized as its initial state. It goes on until we predicted the whole range of output.&lt;/p>
+&lt;h4 id="a-hyperparamter-tuning">a. Hyperparamter Tuning&lt;/h4>
+&lt;p>In previous single step model, the minimum value of MSE was obtain when the input width is small but interesting in autoregressive model as the input width increase the MSE reduces. Therefore, the model performs the best when it&amp;rsquo;s looking large number of previous date data.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5chyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
+&lt;h4 id="b-evaluation-1">b. Evaluation&lt;/h4>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>The model is taking a consecutive input of the past 31 days and it is predicting the next 3 days. The difference between the actual price and the predicted price is not much. Therefore depending upon the task we can select an appropriate model and do the task.&lt;/p></description></item><item><title>Slides</title><link>https://gautammilan.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
 &lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
