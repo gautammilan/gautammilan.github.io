@@ -9,7 +9,7 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Upload&lt;/strong> an existing slide deck to &lt;code>static/&lt;/code> and link using &lt;code>url_slides&lt;/code> parameter in the front matter of the talk file&lt;/li>
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
-&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Stock Price Analysis On Nabil Bank</title><link>https://gautammilan.github.io/project/test/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/test/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/post/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
 &lt;p>In statistical terms, time series forecasting is the process of analyzing the time series data using statistics and modeling to make predictions and informed strategic decisions. It falls under Quantitative Forecasting. Examples of Time Series Forecasting are weather forecast over next week, forecasting the closing price of a stock each day etc. In this article we will see different types of models which can be used for this analysis and pick what is best for what situations.&lt;/p>
 &lt;h2 id="time-series-data">Time series data&lt;/h2>
 &lt;p>Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data. We will be taking stock price data to perform our analysis.&lt;/p>
@@ -17,100 +17,7 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;h2 id="preprocessing">Preprocessing&lt;/h2>
-&lt;h3 id="1-normalization">1. Normalization&lt;/h3>
-&lt;p>We need to normalize between 0-1, to remove the problem which arises if the features having in different scales. But when normalizing validate and test data don&amp;rsquo;t use the validate.max() or text.max() and validate.min() or text.min() for their respective normalization use train.max and train.min for both of them. Because we can&amp;rsquo;t look at the validate or test dataset they are unknown to us. The important thing to note here is that the normalization has been done on the input feature only not on the label, the model will predict the actual value of stock.&lt;/p>
-&lt;h3 id="2-sliding-window">2. Sliding window&lt;/h3>
-&lt;p>To perform Supervised learning the dataset should have inputs and its corresponding label. Data windowing is a popular technique for converting historical data like time series to data suitable for supervised learning. It works as it sounds, we select a window for inputs and feed the model the data which has been selected into that window and the model will try to predict the label for that window.
-The main features of the input windows are:&lt;/p>
-&lt;p>• The width (number of time steps) of the input and label windows.&lt;/p>
-&lt;p>• The time offset between them.&lt;/p>
-&lt;p>• Which features are used as inputs, labels, or both.&lt;/p>
-&lt;p>Depending on the task and type of model we may want to generate a variety of data windows. Here are some examples:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>A model that makes a prediction one hour into the future given six days of history, would need a window like this:
-![Example_1](/images/stock/Screenshot 2022-04-22 152711.png#center)&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Similarly, to make a single prediction 24 days into the future, given 24 days of history, we might define a window like this:
-![Example_3](/images/stock/Screenshot 2022-04-22 152644.png#center)
-ImageSource((&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">https://www.tensorflow.org/tutorials/&lt;/a>)&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>Therefore, depending upon the task and model we can generate varieties of inputs which helps to reduce the redundancy of code as by defining an data window using a class.&lt;/p>
-&lt;h2 id="models">Models&lt;/h2>
-&lt;p>In time series forecasting depending upon the number of steps we are going to do the prediction the models can be classified into two types:&lt;/p>
-&lt;h3 id="1-single-step-model">1. Single step Model&lt;/h3>
-&lt;p>In single step model, model will look one step into the future. For example given all the past one month of stock data model will predict what will be the stock value tomorrow. For this task we will be using models like:&lt;/p>
-&lt;h4 id="11dense-model">1.1 Dense model:&lt;/h4>
-&lt;p>A single dense layer is a single layer of fully connected neural network. Here, we will be sending our Inputs of specific input width into multiple dense layer and finally the output of these dense layer will be send though a single neuron dense layer to produce a single step output. It is an regression problem where we take Open, Close, Low and High as input to predict the closing value of the stock.&lt;/p>
-&lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
-&lt;p>On of the most important hyperparameter for stock price prediction is the number of days that the model sees to make future prediction ie input_width. This hyperparameter value is calculated by training the model on different number of days and the model which produces lowest loss it is selected.&lt;/p>
-&lt;p>![Input width vs Mean square Error(MSE)](/images/stock/hyperparameter_for dense_model.png#center)&lt;/p>
-&lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
-&lt;h5 id="b-evaluation">b. Evaluation&lt;/h5>
-&lt;p>At input width 3, the label and prediction for Close value of stock look like this:
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cDense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
-&lt;p>A Recurrent Neural Network (RNN) is a type of neural network well-suited to time series data. RNNs process a time series step-by-step, maintaining an internal state from time step to time step.Let’s see understand how RNN will process time series data:&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cRNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for a day and predict the Close value for the next day. Similarly, at time stamp second it will take the feature vector generated from the first time stamp and predict the 3rd step value and so on until it predicts one step in the future.&lt;/p>
-&lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
-&lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5crnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
-&lt;p>In a multi-step prediction, the model needs to learn to predict a range of future values. Thus, unlike a single-step model, where only a single future point is predicted, a multi-step model predicts a sequence of the future values. There are two rough approaches to this:&lt;/p>
-&lt;p>2.1. Single-shot Model
-Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
-&lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
-&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;h4 id="a-hyperparamter-tuning">a. Hyperparamter Tuning&lt;/h4>
-&lt;p>In previous single step model, the minimum value of MSE was obtain when the input width is small but interesting in autoregressive model as the input width increase the MSE reduces. Therefore, the model performs the best when it&amp;rsquo;s looking large number of previous date data.&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5chyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
-&lt;h4 id="b-evaluation-1">b. Evaluation&lt;/h4>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p></description></item><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/post/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
-&lt;p>In statistical terms, time series forecasting is the process of analyzing the time series data using statistics and modeling to make predictions and informed strategic decisions. It falls under Quantitative Forecasting. Examples of Time Series Forecasting are weather forecast over next week, forecasting the closing price of a stock each day etc. In this article we will see different types of models which can be used for this analysis and pick what is best for what situations.&lt;/p>
-&lt;h2 id="time-series-data">Time series data&lt;/h2>
-&lt;p>Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data. We will be taking stock price data to perform our analysis.&lt;/p>
-&lt;p>Nabil bank is a bank located in Nepal, it&amp;rsquo;s been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h2 id="preprocessing">Preprocessing&lt;/h2>
@@ -129,7 +36,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;ol start="2">
@@ -138,7 +45,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">source&lt;/a>&lt;/p>
@@ -175,7 +82,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
@@ -183,7 +90,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5chyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/hyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
@@ -191,7 +98,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>At input width 3, the label and prediction for Close value of stock look like this:
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cDense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/Dense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
@@ -199,7 +106,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cRNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/imagess/RNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for the first day and predict the Close value for the second day. Similarly, a second time stamp will take the feature vector generated from the first time stamp and second days inputs to predict the 3rd step value and so on until it predicts one step into the future.&lt;/p>
@@ -221,14 +128,14 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5clstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/lstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
 &lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5crnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/rnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
@@ -236,13 +143,13 @@ The main features of the input windows are:&lt;/p>
 &lt;p>2.1. Single-shot Model
 Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
 &lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
-&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/autoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
+&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">class&lt;/span> &lt;span style="color:#a6e22e">denseLayers&lt;/span>(&lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Layer&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>):
@@ -314,7 +221,7 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5chyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/hyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
@@ -322,10 +229,24 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/autoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
-&lt;p>The model is taking a consecutive input of the past 31 days and it is predicting the next 3 days. The difference between the actual price and the predicted price is not much. Therefore depending upon the task we can select an appropriate model and do the task.&lt;/p></description></item><item><title>Slides</title><link>https://gautammilan.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
+&lt;p>The model is taking a consecutive input of the past 31 days and it is predicting the next 3 days. The difference between the actual price and the predicted price is not much. Therefore depending upon the task we can select an appropriate model and do the task.&lt;/p></description></item><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/project/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>Nabil bank is a bank located in Nepal, it&amp;rsquo;s been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.&lt;/p>
+&lt;h1 id="description">Description&lt;/h1>
+&lt;p>There are two types of models that are widely used for time series analysis they are:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Single Step model= Here model will look one step into the future. For example, given all the past one month of the stock data model will predict what will be the stock value tomorrow. The dense model and LSTM model are used to evaluate the single-step model.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multi-step model= In a multi-step prediction, the model needs to learn to predict a range of future values. Thus, unlike a single-step model, where only a single future point is predicted, a multi-step model predicts a sequence of the future values. The autoregressive model is used for this task.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Therefore in this project, we analyzed different models and evaluate which works best for our data.&lt;/p>
+&lt;p>&lt;a href="https://github.com/gautammilan/Stock-price-predictoin-Nabil-Bank-" target="_blank" rel="noopener">Code&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://gautammilan.github.io/post/stock-price-analysis/" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Slides</title><link>https://gautammilan.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
 &lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
 &lt;hr>
 &lt;h2 id="features">Features&lt;/h2>
@@ -440,8 +361,4 @@ color: navy;
 &lt;hr>
 &lt;h1 id="questions">Questions?&lt;/h1>
 &lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>Example Project</title><link>https://gautammilan.github.io/project/example/</link><pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/project/example/</guid><description>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p>
-&lt;p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p>
-&lt;p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p>
-&lt;p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p>
-&lt;p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p></description></item><item><title/><link>https://gautammilan.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/admin/config.yml</guid><description/></item></channel></rss>
+&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title/><link>https://gautammilan.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/admin/config.yml</guid><description/></item></channel></rss>

@@ -6,7 +6,7 @@
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h2 id="preprocessing">Preprocessing&lt;/h2>
@@ -25,7 +25,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;ol start="2">
@@ -34,7 +34,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">source&lt;/a>&lt;/p>
@@ -71,7 +71,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
@@ -79,7 +79,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5chyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/hyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
@@ -87,7 +87,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>At input width 3, the label and prediction for Close value of stock look like this:
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cDense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/Dense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
@@ -95,7 +95,7 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cRNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/imagess/RNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for the first day and predict the Close value for the second day. Similarly, a second time stamp will take the feature vector generated from the first time stamp and second days inputs to predict the 3rd step value and so on until it predicts one step into the future.&lt;/p>
@@ -117,14 +117,14 @@ The main features of the input windows are:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="%5cimages%5cstock%5clstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/lstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
 &lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5crnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/rnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
@@ -132,13 +132,13 @@ The main features of the input windows are:&lt;/p>
 &lt;p>2.1. Single-shot Model
 Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
 &lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
-&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/autoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
+&lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">class&lt;/span> &lt;span style="color:#a6e22e">denseLayers&lt;/span>(&lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Layer&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>):
@@ -210,7 +210,7 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5chyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/hyperparameter_for_autoregressiv_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
@@ -218,7 +218,7 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="images%5cstock%5cautoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/autoregressive_prediction.png#center" alt="Plotting Close value for consecutive days" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>The model is taking a consecutive input of the past 31 days and it is predicting the next 3 days. The difference between the actual price and the predicted price is not much. Therefore depending upon the task we can select an appropriate model and do the task.&lt;/p></description></item></channel></rss>
