@@ -20,8 +20,7 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: milanmg18@gmail.com
-phone: +977 9865138476
+email: milanmgautam5198@gmail.com
 address:
   street: Tandi, East-West Highway
   city: Chitwan
@@ -37,11 +36,11 @@ address:
 #  - 'Monday 10:00 to 13:00'
 #  - 'Wednesday 09:00 to 10:00'
 #appointment_url: 'https://calendly.com'
-contact_links:
-  - icon: twitter
-    icon_pack: fab
-    name: DM Me
-    link: 'https://twitter.com/Twitter'
+# contact_links:
+#   - icon: twitter
+#     icon_pack: fab
+#     name: DM Me
+#     link: 'https://twitter.com/Twitter'
   #- icon: skype
   #  icon_pack: fab
   #  name: Skype Me

@@ -4,7 +4,7 @@ title = "Stock Price forecasting On Nabil Bank"
 description = ""
 slug = ""
 authors = ["Milan Gautam"]
-tags = []
+tags = ["Deep Learning"]
 categories = ["Deep Learning"]
 externalLink = ""
 series = ["Artificial Intelligence"]
@@ -24,7 +24,9 @@ There are two types of models that are widely used for time series analysis they
 
 Therefore in this project, we analyzed different models and evaluate which works best for our data.
 
-[Code](https://github.com/gautammilan/Stock-price-predictoin-Nabil-Bank-)
+[Github Code](https://github.com/gautammilan/Stock-price-forecasting-Nabil-Bank)
+
+Please visit this article below where every single step is explained thoroughly.
 
 [Article](https://gautammilan.github.io/post/stock-price-analysis/)
 
