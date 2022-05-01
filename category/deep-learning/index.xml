@@ -1,17 +1,147 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deep Learning | MILAN</title><link>https://gautammilan.github.io/category/deep-learning/</link><atom:link href="https://gautammilan.github.io/category/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>Deep Learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 02 Feb 2022 21:38:54 +0545</lastBuildDate><image><url>https://gautammilan.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Deep Learning</title><link>https://gautammilan.github.io/category/deep-learning/</link></image><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/post/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deep Learning | MILAN</title><link>https://gautammilan.github.io/category/deep-learning/</link><atom:link href="https://gautammilan.github.io/category/deep-learning/index.xml" rel="self" type="application/rss+xml"/><description>Deep Learning</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 02 Apr 2022 21:38:54 +0545</lastBuildDate><image><url>https://gautammilan.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>Deep Learning</title><link>https://gautammilan.github.io/category/deep-learning/</link></image><item><title>Nepali Langauge Model</title><link>https://gautammilan.github.io/project/nepali-language-model/</link><pubDate>Sat, 02 Apr 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/nepali-language-model/</guid><description>&lt;p>With the introduction of BERT in 2018, the machine became as capable of understanding natural language as an ordinary human being, making it feasible to sift through massive corpora of text data and extract meaningful information from it. Due to high data requirements and computational resources, only a few languages have made this transition into the modern era, while many languages, such as Nepali, are still in the prehistoric days of NLP.&lt;/p>
+&lt;p>After learning about it, it became my goal to design a Nepali language model and make it open source so that anyone could use it. I began working on the dream by gathering 14.5 GB of Nepali Corpus from over 50 Nepali news websites. To assess the performance of various input length language models, we trained two models, one with 128 token lengths and the other with 512 token lengths, using cloud TPUs. To test our model, we are now developing a GLUE-like evaluation task for the Nepali language. Because this is an active project, I may not be able to release the code.&lt;/p></description></item><item><title>Nepali Speaker Recognition</title><link>https://gautammilan.github.io/project/nepali-speaker-recognition/</link><pubDate>Thu, 03 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/nepali-speaker-recognition/</guid><description>&lt;p>Speaker Identification is the process of identifying a person based on the audio of their spoken words. Previously, audio processing models were widely accepted, but convolution neural networks have lately demonstrated that they, too, may generate astounding outcomes. I&amp;rsquo;ve always wanted to be a model trainer in my mother language. As a result, I collected Nepali audio from YouTube of exactly 34 politicians, both male and female, speaking in diverse circumstances, taking care not to include noise in the audio, and the average audio length is approximately 5 minutes.&lt;/p>
+&lt;p>In this study, a siamese network with contractive loss was implemented, yielding high-quality results.&lt;/p>
+&lt;br>
+&lt;p>&lt;a href="https://github.com/gautammilan/Nepali_Speaker_Recognition" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p>
+&lt;p>I have written a medium article in which I go into great detail about the procedures I took to solve this problem:&lt;/p>
+&lt;p>&lt;a href="https://medium.com/@milangautam5198/identifying-nepali-politician-from-audio-c0365f74f8ef" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Single Image Super Resolution</title><link>https://gautammilan.github.io/post/single-image-super-resolution/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/single-image-super-resolution/</guid><description>&lt;p>&lt;a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">GAN&lt;/a> (Generating Adversarial Network) is about creating, like drawing but completely from scratch. It has got two models: the Generator and the Discriminator are put together into a game of adversary. Through which they learn the intricate details of the target data distribution. These two models are playing a MIN-MAX game where one tries to minimize the loss and the other tries to maximize. While doing so a global optimum is reached, where the Discriminator is no longer able to distinguish between real and generated (fake) data distribution.&lt;/p>
+&lt;p>SISR(Single Image Super-Resolution) is an application of GAN. Image super-resolution is the process of enlarging small photos while maintaining a high level of quality, or of restoring high-resolution images from low-resolution photographs with rich information. Here the model&amp;rsquo;s work is to map the function from low-resolution image data to its high-resolution image. Instead of giving a random noise to the Generator, a low-resolution image is fed into it. After passing through various Convolutional Layers and Upsampling Layers, the Generator gives a high-resolution image output. Generally, there are multiple solutions to this problem, so it&amp;rsquo;s quite difficult to master the output up to original images in terms of richness and quality.&lt;/p>
+&lt;br>
+&lt;h2 id="data-preprocessing-and-augmentation">Data Preprocessing and Augmentation:&lt;/h2>
+&lt;p>We have used the &lt;a href="https://data.vision.ee.ethz.ch/cvl/DIV2K/" target="_blank" rel="noopener">DIV2K&lt;/a> [Agustsson and Timofte (2017)] dataset provided by the TensorFlow library. There are altogether 800 pairs of low resolution and high-resolution images in the the training set whereas 100 pairs in the testing set. This data contains mainly people, cities, fauna, sceneries, etc.
+We used flipping and rotating through 90, 180, and 270 degrees randomly over the dataset. Since we had limited memory on the training computer, we had to split large images into patches of smaller size. 19 patches of size 96 ✕ 96 pixels resolution were obtained from an image randomly. Our generator is designed to upsample images by 4 times so, the output image patch will be of dimension: 384 ✕ 384 pixels.&lt;/p>
+&lt;br>
+&lt;h2 id="generator">Generator&lt;/h2>
+&lt;p>The generator is the block in the architecture which is responsible for generating the high resolution(HR) images from low resolution(LR) images. In 2015, &lt;a href="https://arxiv.org/abs/1609.04802" target="_blank" rel="noopener">SRGAN&lt;/a> was published which introduced the concept of using GAN for SISR tasks which produced the state the art solution. The generator of &lt;a href="https://arxiv.org/abs/1609.04802" target="_blank" rel="noopener">SRGAN&lt;/a> consists of several residual blocks that facilitate the flow of the gradient during backpropagation.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/generator.png#center" alt="Generator Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>To further enhance the quality of generator images &lt;a href="https://arxiv.org/abs/1809.00219" target="_blank" rel="noopener">ESRGAN&lt;/a> was released which performed some modifications in the generator of the &lt;a href="https://arxiv.org/abs/1609.04802" target="_blank" rel="noopener">SRGAN&lt;/a> which includes:&lt;/p>
+&lt;ul>
+&lt;li>Removing the batch normalized(BN) layers.&lt;/li>
+&lt;li>Replacing the original residual block with the proposed Residual-in-Residual Dense Block (RRDB), which combines multi-level residual network and dense connections as in the figure below:&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/rrdb.png#center" alt="RRDB Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Fig: Residual in Residual Dense Block(RRDB)&lt;/p>
+&lt;p>Removing BN layers has proven to increase performance and reduce the computational complexity in different PSNR-oriented tasks including SR and deblurring. BN layers normalize the features using mean and variance in a batch during training and use the estimated mean and variance of the whole training dataset during testing. When the statistics of training and testing datasets differ a lot, BN layers tend to introduce unpleasant artifacts and limit the generalization ability. The researchers empirically observe that BN layers are more likely to bring artifacts when the network is deeper and trained under a GAN framework. These artifacts occasionally appear among iterations and different settings, violating the need for stable performance overtraining. Therefore, removing BN layers for stable training and consistent performance. Furthermore, removing BN layers helps to improve generalization ability and to reduce computational complexity and memory usage.&lt;/p>
+&lt;p>RRDB employs a deeper and more complex structure than the original residual block in SRGAN. Specifically, as shown in the figure above, the proposed RRDB has a residual-in-residual structure, where residual learning is used at different levels. Here, the RRDB uses dense block in the main path, where the network capacity becomes higher benefiting from the dense connections. In addition to the improved architecture, it also exploits several techniques to facilitate training a very deep network such as residual scaling(beta) i.e., scaling down the residuals by multiplying a constant between 0 and 1 before adding them to the main path to prevent instability.&lt;/p>
+&lt;br>
+&lt;h2 id="discriminator">Discriminator&lt;/h2>
+&lt;p>The task of the discriminator is to discriminate between real HR images and generated SR images. Discriminator architecture here used is similar to DC-GAN architecture with LeakyReLU activation function. The network contains eight convolutional layers with 3×3 filter kernels, increasing by a factor of 2 from 64 to 512 kernels as in the VGG network. Strided convolutions are used to reduce the image resolution each time the number of features is doubled.
+But to overcome the instability while training of original GAN, we use a variant of GANs named improved training of Wasserstein GANs (WGAN-GP). So the last sigmoid layer of the conventional DC-GAN discriminator is omitted. This helps in not restricting the feature maps in 0 to 1 value.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/discriminator.png#center" alt="discriminator image" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="losses">Losses:&lt;/h2>
+&lt;h3 id="generator-loss">Generator Loss&lt;/h3>
+&lt;p>The generator loss is the sum of MSE, perceptual loss +adversarial loss&lt;/p>
+&lt;p>&lt;em>l&lt;sub>G&lt;/sub> = MSE+Perceptual Loss +Adversarial loss&lt;/em>&lt;/p>
+&lt;p>&lt;em>l&lt;sub>G&lt;/sub>= l&lt;sub>MSE&lt;/sub>+l&lt;sub>p&lt;/sub>+ l&lt;sub>GA&lt;/sub>&lt;/em>&lt;/p>
+&lt;br>
+&lt;h3 id="mean-square-errormse">Mean Square Error(MSE)&lt;/h3>
+&lt;p>As the most common optimization objective for SISR, the pixelwise MSE loss is calculated as:&lt;/p>
+&lt;p>&lt;em>l&lt;sub>MSE&lt;/sub> = ||G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>) - I&lt;sub>HR&lt;/sub>||&lt;sub>2&lt;/sub>&lt;sup>2&lt;/sup>&lt;/em>,&lt;/p>
+&lt;p>where the parameter of the generator is denoted by ; the generated image, namely I&lt;sub>SR&lt;/sub>,is denoted by G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>); and the ground truth is denoted by I&lt;sub>HR&lt;/sub> . Although models with MSE loss favor a high PSNR value, the generated results tend to be perceptually unsatisfying with overly smooth textures. Despite the aforementioned shortcomings, this loss term is still kept because MSE has clear physical meaning and helps to maintain color stability.&lt;/p>
+&lt;br>
+&lt;h3 id="perceptual-loss">Perceptual Loss&lt;/h3>
+&lt;p>To compensate for the shortcomings of MSE loss and allow the loss function to better measure semantic and perceptual differences between images, we define and optimize a perceptual loss based on high-level features extracted from a pretrained network. The rationality of this loss term lies in that the pretrained network for classification originally has learned to encode the semantic and perceptual information that may be measured in the loss function. To enhance the performance of the perceptual loss, a 19-layer VGG network is used. The perceptual loss is actually the Euclidean distance between feature representations, which is defined as&lt;/p>
+&lt;p>&lt;em>l&lt;sub>p&lt;/sub> = ||𝜙(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)) - 𝜙(I&lt;sub>HR&lt;/sub>)||&lt;sub>2&lt;/sub>&lt;sup>2&lt;/sup>&lt;/em>,&lt;/p>
+&lt;p>where 𝜙 refers to the 19-layer VGG network. With this loss term, I&lt;sub>SR&lt;/sub> and I&lt;sub>HR&lt;/sub> are encouraged to have similar feature representations rather than to exactly match with each other in a pixel wise manner.&lt;/p>
+&lt;br>
+&lt;h3 id="adversarial-losses">Adversarial Losses:&lt;/h3>
+&lt;p>In &lt;a href="https://arxiv.org/abs/1609.04802" target="_blank" rel="noopener">SRGAN&lt;/a>, the adopted generative model is generative adversarial network (GAN) and it suffers from training instability. WGAN leverages the Wasserstein distance to produce a value function, which has better theoretical properties than the original GAN. However, WGAN requires that the discriminator must lie within the space of 1-Lipschitz through weight clipping, resulting in either vanishing or exploding gradients without careful tuning of the clipping threshold. &lt;br>
+To overcome the flaw of clipping , a new approach is applied called Gradient Pelanty method. It is used to enforce the Lipschitz constraint. This way Wasserstein distance between two distributions to help decide when to stop the training but penalizes the gradient of the discriminator with respect to its input instead of weight clipping. With gradient penalty, the discriminator is encouraged to learn smoother decision boundaries.&lt;/p>
+&lt;br>
+&lt;h3 id="generator-loss-1">Generator Loss&lt;/h3>
+&lt;p>&lt;em>l&lt;sub>GA&lt;/sub>=-𝔼[D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)]&lt;/em>&lt;/p>
+&lt;br>
+&lt;h3 id="discriminator-loss">Discriminator Loss&lt;/h3>
+&lt;p>&lt;em>l&lt;sub>DA&lt;/sub>=𝔼[D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)]-𝔼[D(I&lt;sub>HR&lt;/sub>)] + λ𝔼(||▽&lt;sub>hat{I}&lt;/sub>D(hat{I})-1||&lt;sub>2&lt;/sub>-1)&lt;sup>2&lt;/sup>&lt;/em>&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/work_flow.png#center" alt="workflow diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Normally, the output of the classifier i.e. discriminator in this case is kept between 0-1 using a sigmoid function in the last layer, where if discriminator prediction 0 for an image then the image is SR likewise if the prediction is 1 then it is an HR image. Here the discriminator is trained using WGAN-GP approach &lt;a href="https://sulavtimilsina.github.io/posts/wgan-gp/" target="_blank" rel="noopener">(described here)&lt;/a>, hence the output is not bounded between 0-1 instead the discriminator will try to maximize the distance between the prediction of SR image and HR image and generator will try to minimize it. Let&amp;rsquo;s look at the loss of the generator ie. I&lt;sub>GA&lt;/sub> and the loss of discriminator I&lt;sub>DA&lt;/sub> .&lt;/p>
+&lt;br>
+&lt;h3 id="understanding-discriminator-adversarial-loss">UNDERSTANDING DISCRIMINATOR ADVERSARIAL LOSS&lt;/h3>
+&lt;p>(not considering the gradient penalty term for making it easier to understand)&lt;/p>
+&lt;p>&lt;em>l&lt;sub>DA&lt;/sub>=𝔼[D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)]-𝔼[D(I&lt;sub>HR&lt;/sub>)]&lt;/em>&lt;/p>
+&lt;p>(Note: &lt;em>l&lt;sub>DA&lt;/sub>= 𝔼[D(I&lt;sub>HR&lt;/sub>)]-𝔼[D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)]&lt;/em> if the loss of the discriminator is in this form than the discriminator will try to maximize this equation and the generator will try to minimize the I&lt;sub>GA&lt;/sub>).&lt;/p>
+&lt;p>Considering D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>))= 5 and D(I&lt;sub>HR&lt;/sub>) = 5 initially when the discriminator doesn’t have the ability to differentiate between them.&lt;/p>
+&lt;p>Therefore the loss at the very beginning:
+&lt;em>l&lt;sub>DA&lt;/sub>=5-5= 0,&lt;/em>&lt;/p>
+&lt;p>The discriminator wants to minimize the loss l&lt;sub>DA&lt;/sub>, hence increasing the distance between
+D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>))and D(I&lt;sub>HR&lt;/sub>) . Suppose after the update of the gradient of the discriminator for the few step, the value of prediction becomes D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>))=-2 and D(I&lt;sub>HR&lt;/sub>) = 2 ,therefore discriminator is learning to know the difference between the LR image and the HR image, hence making the loss(l&lt;sub>DA&lt;/sub>)= -4, Here the loss is minimized and the distance between the two predictions is maximized.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/understanding_disc_adv_loss.png#center" alt="discriminator adverserial loss" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h3 id="understanding-generator-adversarial-loss">UNDERSTANDING GENERATOR ADVERSARIAL LOSS&lt;/h3>
+&lt;p>Discriminator is trained for a few steps and then the update of the generator happens. Therefore the discriminator is kept a few steps ahead of the generator in terms of its learning. Let&amp;rsquo;s consider the discriminator has been trained for the few steps and it predicted outputs are:&lt;/p>
+&lt;p>&lt;em>D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)) = -2&lt;/em>
+&lt;em>D(I&lt;sub>HR&lt;/sub>) = 2&lt;/em>&lt;/p>
+&lt;p>The loss of the generator is:&lt;/p>
+&lt;p>&lt;em>l&lt;sub>GA&lt;/sub> = -𝔼[D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)]&lt;/em>&lt;/p>
+&lt;p>Therefore,
+&lt;em>l&lt;sub>GA&lt;/sub>= -(-2) = 2&lt;/em>&lt;/p>
+&lt;p>Generator wants to minimize l&lt;sub>GA&lt;/sub> , which can only we achieved by increasing the value of D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)) hence ultimately reducing the distance between D(G&lt;sub>Θ&lt;/sub>(I&lt;sub>LR&lt;/sub>)) and D(I&lt;sub>HR&lt;/sub>) ,hence making the SR image and HR image identical as:&lt;/p>
+&lt;p>&lt;em>l&lt;sub>GA&lt;/sub>= -(large positive value) ≈ global minima&lt;/em>&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/understanding_gen_adv_loss.png#center" alt="generator adverserial loss" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h3 id="result-and-conclusion">Result and Conclusion:&lt;/h3>
+&lt;p>We chose Kaggle&amp;rsquo;s kernel with Tesla P100 GPU to train the model. Since it has 20 million training parameters, training it for 500 epochs is a tedious job. Until now we have trained it only up to 100 epochs.
+Following is the sample output of the 100th epoch.
+The rightmost image is Low-Resolution Patch, the Middle one is the High-Resolution Patch and the Left most one is the Generated High-Resolution Image.&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/output.png#center" alt="outputs" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Single Image Super Resolution</title><link>https://gautammilan.github.io/project/1single-image-super-resolution/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/1single-image-super-resolution/</guid><description>&lt;p>SISR(Single Image Super-Resolution) is an application of GAN. Image super-resolution is the process of enlarging small photos while maintaining a high level of quality, or of restoring high-resolution images from low-resolution photographs with rich information. Here the model&amp;rsquo;s work is to map the function from low-resolution image data to its high-resolution image. Instead of giving a random noise to the Generator, a low-resolution image is fed into it. After passing through various Convolutional Layers and Upsampling Layers, the Generator gives a high-resolution image output. Generally, there are multiple solutions to this problem, so it&amp;rsquo;s quite difficult to master the output up to original images in terms of richness and quality.&lt;/p>
+&lt;p>In this study, we used Wasserstein GAN with Gradient Penalty to train SRGAN, ensuring steady training of both generator and discriminator.&lt;/p>
+&lt;br>
+&lt;p>&lt;a href="https://github.com/gautammilan/Single-Image-Super-Resolution" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p>
+&lt;p>Please visit this article where I have explained each and every single thing that are crucial from data processing to training.&lt;/p>
+&lt;p>&lt;a href="https://gautammilan.github.io/post/single-image-super-resolution/" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Stock Price forecasting On Nabil Bank</title><link>https://gautammilan.github.io/post/stock-price-analysis/</link><pubDate>Wed, 02 Feb 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/stock-price-analysis/</guid><description>&lt;!-- ## Introduction -->
 &lt;p>In statistical terms, time series forecasting is the process of analyzing the time series data using statistics and modeling to make predictions and informed strategic decisions. It falls under Quantitative Forecasting. Examples of Time Series Forecasting are weather forecast over next week, forecasting the closing price of a stock each day etc. In this article we will see different types of models which can be used for this analysis and pick what is best for what situations.&lt;/p>
+&lt;br>
 &lt;h2 id="time-series-data">Time series data&lt;/h2>
 &lt;p>Time series data are simply measurements or events that are tracked, monitored, downsampled, and aggregated over time. This could be server metrics, application performance monitoring, network data, sensor data, events, clicks, trades in a market, and many other types of analytics data. We will be taking stock price data to perform our analysis.&lt;/p>
 &lt;p>Nabil bank is a bank located in Nepal, it&amp;rsquo;s been trading in NEPSE(Nepal Stock Exchange ) for the past 20 years. We can easily get this data by going to the NEPSE website. This data contains four features such as the price of the stock when the market opens on a particular date, the maximum value of the stock, the minimum value, and the value of the stock at which the market close on that day.&lt;/p>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-dataset">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock_dataframe.png#center" alt="Image of the data" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Dataset
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
+&lt;br>
 &lt;h2 id="preprocessing">Preprocessing&lt;/h2>
 &lt;h3 id="1-normalization">1. Normalization&lt;/h3>
 &lt;p>We need to normalize between 0-1, to remove the problem which arises if the features having in different scales. But when normalizing validate and test data don&amp;rsquo;t use the validate.max() or text.max() and validate.min() or text.min() for their respective normalization use train.max and train.min for both of them. Because we can&amp;rsquo;t look at the validate or test dataset they are unknown to us. The important thing to note here is that the normalization has been done on the input feature only not on the label, the model will predict the actual value of stock.&lt;/p>
+&lt;br>
 &lt;h3 id="2-sliding-window">2. Sliding window&lt;/h3>
 &lt;p>To perform Supervised learning the dataset should have inputs and its corresponding label. Data windowing is a popular technique for converting historical data like time series to data suitable for supervised learning. It works as it sounds, we select a window for inputs and feed the model the data which has been selected into that window and the model will try to predict the label for that window.
 The main features of the input windows are:&lt;/p>
@@ -23,26 +153,32 @@ The main features of the input windows are:&lt;/p>
 &lt;li>A model that makes a prediction one hour into the future given six days of history, would need a window like this:&lt;/li>
 &lt;/ol>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-example-1">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example1.png#center" alt="Example_1" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Example 1
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;ol start="2">
 &lt;li>Similarly, to make a single prediction 24 days into the future, given 24 days of history, we might define a window like this:&lt;/li>
 &lt;/ol>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-example-1">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/example2.png#center" alt="Example_2" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Example 1
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;p>&lt;a href="https://www.tensorflow.org/tutorials/" target="_blank" rel="noopener">source&lt;/a>&lt;/p>
 &lt;p>Therefore, depending upon the task and model we can generate varieties of inputs which helps to reduce the redundancy of code as by defining an data window using a class.&lt;/p>
+&lt;br>
 &lt;h2 id="models">Models&lt;/h2>
 &lt;p>In time series forecasting depending upon the number of steps we are going to do the prediction for the models can be classified into two types:&lt;/p>
 &lt;h3 id="1-single-step-model">1. Single step Model&lt;/h3>
 &lt;p>In single step model, model will look one step into the future. For example given all the past one month of stock data model will predict what will be the stock value tomorrow. For this task we will be using models like:&lt;/p>
+&lt;br>
 &lt;h4 id="11dense-model">1.1 Dense model:&lt;/h4>
 &lt;p>A single dense layer is a single layer of fully connected neural network. Here, we will be sending our Inputs of specific input width into multiple dense layer and finally the output of these dense layer will be send though a single neuron dense layer to produce a single step output. It is an regression problem where we take Open, Close, Low and High as input to predict the closing value of the stock.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
@@ -69,34 +205,44 @@ The main features of the input windows are:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-architecture">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/desce_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/desce_code.png#center," alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Architecture
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-hyperparameter-tuning">a. Hyperparameter tuning&lt;/h5>
 &lt;p>One of the most important hyperparameter for stock price prediction is the number of days that the model sees to make future prediction ie input_width. This hyperparameter value is calculated by training the model on different number of input width and the model which produces lowest loss it is selected.&lt;/p>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-input-width-vs-mean-square-errormse">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/hyperparameter_for_dense_model.png#center" alt="Input width vs Mean square Error(MSE)" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Input width vs Mean square Error(MSE)
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;p>We trained the model on input width [3,5,8,15,18,22,25,28,31] and among them the minimum value of MSE was obtained with the 3. So, the input width for the dense model is selected as 3.&lt;/p>
+&lt;br>
 &lt;h5 id="b-evaluation">b. Evaluation&lt;/h5>
 &lt;p>At input width 3, the label and prediction for Close value of stock look like this:
-&lt;figure >
+&lt;figure id="figure-label-vs-prediction">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/Dense_model_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+label vs prediction
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
+&lt;br>
 &lt;h4 id="12-lstm-model">1.2 LSTM model&lt;/h4>
 &lt;p>A Recurrent Neural Network (RNN) is a type of neural network well-suited to time series data. RNNs process a time series step-by-step, maintaining an internal state from time step to time step.Let’s see understand how RNN will process time series data:&lt;/p>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-lstm-model">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/imagess/RNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/RNN.png#center" alt="LSTM modelS" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+LSTM model
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;p>Here the RNN/LSTM is trained on every single input step, as a result, it makes the model more robust to changing landscape which is common in the stock dataset. It will take stock prices[Open, Close, High, Low] as input for the first day and predict the Close value for the second day. Similarly, a second time stamp will take the feature vector generated from the first time stamp and second days inputs to predict the 3rd step value and so on until it predicts one step into the future.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
@@ -115,28 +261,35 @@ The main features of the input windows are:&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-architecture">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/lstm_code.png#center" alt="Architecture" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Architecture
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;h5 id="a-evaluation">a. Evaluation&lt;/h5>
 &lt;p>The minimum value of loss was obtained at input width 11 and its MSE value is similar dense model. Let&amp;rsquo;s look it label and prediction plot:
-&lt;figure >
+&lt;figure id="figure-label-vs-prediction">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/stock/rnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/rnn_ground_truth_vs_prediction.png#center" alt="label vs prediction" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+label vs prediction
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
+&lt;br>
 &lt;h3 id="2-multi-step-model">2 Multi-step model&lt;/h3>
 &lt;p>In a multi-step prediction, the model needs to learn to predict a range of future values. Thus, unlike a single-step model, where only a single future point is predicted, a multi-step model predicts a sequence of the future values. There are two rough approaches to this:&lt;/p>
 &lt;p>2.1. Single-shot Model
 Single-shot Model makes prediction of the entire time series at once. It is a time machine that can jump to any day into the future.&lt;/p>
 &lt;p>2.2. Autoregressive predictions where the model only makes single-step predictions and its output is fed back as its input. We can see it as a time machine that can&amp;rsquo;t directly jump to any future date, instead, it had to go through each of the previous dates until it reaches the required future date.&lt;/p>
 &lt;p>
-&lt;figure >
+&lt;figure id="figure-autoregressive-model">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/autoregressive.png#center" alt="Autoregressive Model" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
+&lt;/div>&lt;figcaption>
+Autoregressive Model
+&lt;/figcaption>&lt;/figure>
 &lt;/p>
 &lt;p>For example, a person is living in 2012 who wants to go to 2022, if he used its single-shot time machine he can directly go to the year 2022 but as the machine doesn&amp;rsquo;t have any information about the jumped years its prediction events may be different from the actual events. But on the other hand, if he used its autoregressive time machine, the time machine will take him to the year 2013 and then 2014 until he reaches the year 2022, therefore the machine learns information about the intermediate year also which helps to improve the prediction significantly.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
@@ -205,6 +358,7 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>In the code, we can see we send the input to an LSTM layer which produces an output and state of the last LSTM cell. These output and state vectors are sent to an LSTM cell to forecast the price for a single day. Similarly, the next LSTM cell executes the previous cell output as input, and the state of the previous cell gets initialized as its initial state. It goes on until we predicted the whole range of output.&lt;/p>
+&lt;br>
 &lt;h4 id="a-hyperparamter-tuning">a. Hyperparamter Tuning&lt;/h4>
 &lt;p>In previous single step model, the minimum value of MSE was obtain when the input width is small but interesting in autoregressive model as the input width increase the MSE reduces. Therefore, the model performs the best when it&amp;rsquo;s looking large number of previous date data.&lt;/p>
 &lt;p>
@@ -214,6 +368,7 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;p>We can see the model performs the best when the input width is 31.&lt;/p>
+&lt;br>
 &lt;h4 id="b-evaluation-1">b. Evaluation&lt;/h4>
 &lt;p>
 &lt;figure >
@@ -234,5 +389,270 @@ Single-shot Model makes prediction of the entire time series at once. It is a ti
 &lt;/li>
 &lt;/ol>
 &lt;p>Therefore in this project, we analyzed different models and evaluate which works best for our data.&lt;/p>
-&lt;p>&lt;a href="https://github.com/gautammilan/Stock-price-predictoin-Nabil-Bank-" target="_blank" rel="noopener">Code&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://gautammilan.github.io/post/stock-price-analysis/" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;a href="https://github.com/gautammilan/Stock-price-forecasting-Nabil-Bank" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p>
+&lt;p>Please visit this article below where every single step is explained thoroughly.&lt;/p>
+&lt;p>&lt;a href="https://gautammilan.github.io/post/stock-price-analysis/" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Transactions entity extractor</title><link>https://gautammilan.github.io/post/entity-extraction/</link><pubDate>Mon, 03 Jan 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/post/entity-extraction/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>As most of today&amp;rsquo;s world has been digitalized, instead of writing transactions in journals people do it on their computers. In many cases, these transactions have important information about the parties involved in it, so business tries to acquire it by using many techniques. In this article, we will look into one such transaction and try to acquire embedded information inside the transaction using the deep learning model.&lt;/p>
+&lt;p>
+&lt;figure id="figure-conventional-method">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/dataset_image_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Conventional Method
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>As we can see the transaction contains the store number information, usually people had to go through all of these transactions to get the store number ID. But in today&amp;rsquo;s era, it’s not feasible where thousands of transaction happens every single second using various digital means.&lt;/p>
+&lt;br>
+&lt;h2 id="mapping-it-to-machine-learning-problem">Mapping it to machine learning problem&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/model_idea_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>So basically we need to build a model which will make the transaction as an input and produce its store number. As we are emphasizing each character and determining whether it is a store number or not. Character LSTM is capable of doing this task, so the ideal choice for solving this problem is a char-LSTM model, so we will be using it.&lt;/p>
+&lt;p>
+&lt;figure id="figure-working-of-bidirectional-lstm">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/model_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Working of Bidirectional LSTM
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;p>We will approach this problem as binary classification where the position of store numbers present inside the transaction is labeled as 1 and all the other characters as 0. During inference, we will select all the characters as store numbers that have the prediction of 1. The position of the store number is not rigid and it depends upon the characters appearing on both sides of it. So it is important to look at the transaction from left to right and right to left and then select the store number. Therefore bidirectional LSTM is capable of doing that and we will be using it in this project. Similarly, the size of data that we will be working on is really small only 100 data points for train and we will use other 100 data points for validation, so we will use different training approaches to get the best out of it.&lt;/p>
+&lt;p>
+&lt;figure id="figure-dataset">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/dataset_distribution_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Dataset
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;h2 id="preprocessing">Preprocessing&lt;/h2>
+&lt;h3 id="1-1removing-consecutive-whitespaces">1. 1. Removing consecutive Whitespaces&lt;/h3>
+&lt;p>We are considering whitespace as a special character, if multiple whitespaces appear in the transaction then they get tokenized using consecutive whitespace tokens, here the model will learn the necessity of adding consecutive whitespaces which is not true. So by removing the consecutive whitespaces altogether we elimate these phenomena. For example&lt;/p>
+&lt;p>Before removal: Spark 2001&lt;/p>
+&lt;p>After removal: Spark 2001&lt;/p>
+&lt;br>
+&lt;h3 id="12-removing-names">1.2 Removing names&lt;/h3>
+&lt;p>All the transactions have some kind of name inside them like ANN TAYLOR FACTORY #2202, MCDONALD&amp;rsquo;S F1682, etc. For some models, these names accelerate the training and for some, it works counterproductive. Depending upon the model we will be removing names from the transaction.&lt;/p>
+&lt;p>Before removal: Spark 2001&lt;/p>
+&lt;p>After removal: 2001&lt;/p>
+&lt;br>
+&lt;h3 id="13-tokenization-amd-padding">1.3 Tokenization amd Padding&lt;/h3>
+&lt;p>Dictionary is created for all the characters(a,A,c,C&amp;hellip;), non-characters(@,#,%,&amp;hellip;) and digits(1,2,3,4,..). Two special tokens for whitespace character and padding([PAD]) are also included in the dictionary which makes the total size of the vocabulary 87. Finally, all the characters of the transactions are tokenized using the dictionary.&lt;/p>
+&lt;p>We have considered that every transaction will have 50 characters, to make sure every transaction has the same length. If the transaction is smaller than this it is padded using padding character [PAD] and if it is larger than 50 characters then it is truncated.&lt;/p>
+&lt;br>
+&lt;h3 id="14-label-creating">1.4 Label Creating&lt;/h3>
+&lt;p>A list of labels is created for each transaction. If the character is a store number character then it is labeled as 1 elsewhere it is labeled as 0. For transactions such as DOLRTREE 2257 00022574, where the characters forming the store number are located at two places. In such a case the store number characters which are located on the leftmost side are labeled as store number characters and the other one is ignored.&lt;/p>
+&lt;p>Transaction: DOLRTREE 2257 00022574&lt;/p>
+&lt;p>label :00000000 1111 00000000&lt;/p>
+&lt;p>Note: For this example whitespace characters has not be labeled.&lt;/p>
+&lt;br>
+&lt;h1 id="models">Models&lt;/h1>
+&lt;h2 id="1regular-expression-model">1. Regular expression model&lt;/h2>
+&lt;p>By addressing different scenario that occur on training dataset different regular expression operation has been performed on the data. The accuracy for this model is:&lt;/p>
+&lt;p>a. Training dataset= 97%&lt;/p>
+&lt;p>b. Validation dataset= 87%&lt;/p>
+&lt;p>Just by using regular expression the accuracy of validation data is also really good which indicates there is not much difference between the training and validation set. As the possibility of overfitting is really small, we can even train the model for a large number of epochs.&lt;/p>
+&lt;br>
+&lt;h2 id="2lstm-model">2. LSTM Model&lt;/h2>
+&lt;p>There are two inputs to the model one is the token and the second is the attention mask which is a Boolean matrix indicating which tokens have been padded, it is useful when training and calculating loss so that the loss of the padded token doesn’t get included on our overall loss. Similarly, as the store-number character is dependent on the characters on both sides we will use bidirectional LSTM. Bidirectional LSTM produces two outputs for every single cell, one when viewing the characters from the left and the other from the right, we will merge these outputs by taking an average.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">class&lt;/span> &lt;span style="color:#a6e22e">Bi_LSTM&lt;/span>(&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Layer&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>,&lt;span style="color:#a6e22e">units&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">super&lt;/span>(&lt;span style="color:#a6e22e">Bi_LSTM&lt;/span>, &lt;span style="color:#a6e22e">self&lt;/span>).&lt;span style="color:#a6e22e">__init__&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">Return_sequences&lt;/span>: &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">output&lt;/span> &lt;span style="color:#a6e22e">of&lt;/span> &lt;span style="color:#a6e22e">every&lt;/span> &lt;span style="color:#a6e22e">single&lt;/span> &lt;span style="color:#a6e22e">cell&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">return_state&lt;/span>: &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">hidden&lt;/span> &lt;span style="color:#a6e22e">state&lt;/span> &lt;span style="color:#a6e22e">of&lt;/span> &lt;span style="color:#a6e22e">every&lt;/span> &lt;span style="color:#a6e22e">single&lt;/span> &lt;span style="color:#a6e22e">cell&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm&lt;/span> = &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">LSTM&lt;/span>(&lt;span style="color:#a6e22e">units&lt;/span>,&lt;span style="color:#a6e22e">return_sequences&lt;/span>=&lt;span style="color:#a6e22e">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">bi_lstm&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Bidirectional&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">lstm&lt;/span>,&lt;span style="color:#a6e22e">merge_mode&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">ave&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">call&lt;/span>(&lt;span style="color:#a6e22e">self&lt;/span>, &lt;span style="color:#a6e22e">inputs&lt;/span>,&lt;span style="color:#a6e22e">attention_mask&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">It&lt;/span> &lt;span style="color:#a6e22e">is&lt;/span> &lt;span style="color:#a6e22e">important&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">sending&lt;/span> &lt;span style="color:#a6e22e">the&lt;/span> &lt;span style="color:#a6e22e">masking&lt;/span> &lt;span style="color:#a6e22e">vector&lt;/span> &lt;span style="color:#a6e22e">in&lt;/span> &lt;span style="color:#a6e22e">order&lt;/span> &lt;span style="color:#a6e22e">to&lt;/span> &lt;span style="color:#a6e22e">indicate&lt;/span> &lt;span style="color:#a6e22e">which&lt;/span> &lt;span style="color:#a6e22e">tokens&lt;/span> &lt;span style="color:#a6e22e">are&lt;/span> &lt;span style="color:#a6e22e">masked&lt;/span> &lt;span style="color:#a6e22e">tokens&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>= &lt;span style="color:#a6e22e">self&lt;/span>.&lt;span style="color:#a6e22e">bi_lstm&lt;/span>(&lt;span style="color:#a6e22e">inputs&lt;/span>,&lt;span style="color:#a6e22e">mask&lt;/span>= &lt;span style="color:#a6e22e">attention_mask&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">output&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">def&lt;/span> &lt;span style="color:#a6e22e">create&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">inputs&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Input&lt;/span>(&lt;span style="color:#a6e22e">shape&lt;/span>= (&lt;span style="color:#a6e22e">preprocessor_train&lt;/span>.&lt;span style="color:#a6e22e">pad_len&lt;/span>),&lt;span style="color:#a6e22e">dtype&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#66d9ef">float32&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">att_mask&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Input&lt;/span>(&lt;span style="color:#a6e22e">shape&lt;/span>= (&lt;span style="color:#a6e22e">preprocessor_train&lt;/span>.&lt;span style="color:#a6e22e">pad_len&lt;/span>),&lt;span style="color:#a6e22e">dtype&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#66d9ef">bool&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Embedding&lt;/span>(len(&lt;span style="color:#a6e22e">dictionary&lt;/span>),&lt;span style="color:#ae81ff">50&lt;/span>)(&lt;span style="color:#a6e22e">inputs&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#a6e22e">Here&lt;/span> &lt;span style="color:#a6e22e">we&lt;/span> &lt;span style="color:#a6e22e">will&lt;/span> &lt;span style="color:#a6e22e">be&lt;/span> &lt;span style="color:#a6e22e">using&lt;/span> &lt;span style="color:#a6e22e">two&lt;/span> &lt;span style="color:#a6e22e">LSTM&lt;/span> &lt;span style="color:#a6e22e">layers&lt;/span> &lt;span style="color:#a6e22e">each&lt;/span> &lt;span style="color:#a6e22e">followed&lt;/span> &lt;span style="color:#a6e22e">by&lt;/span> &lt;span style="color:#a6e22e">an&lt;/span> &lt;span style="color:#a6e22e">dropout&lt;/span> &lt;span style="color:#a6e22e">layer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">Bi_LSTM&lt;/span>(&lt;span style="color:#ae81ff">126&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">attention_mask&lt;/span>= &lt;span style="color:#a6e22e">att_mask&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.3&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">Bi_LSTM&lt;/span>(&lt;span style="color:#ae81ff">65&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">attention_mask&lt;/span>= &lt;span style="color:#a6e22e">att_mask&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.3&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">TimeDistributed&lt;/span>(&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">32&lt;/span>))(&lt;span style="color:#a6e22e">x&lt;/span>,&lt;span style="color:#a6e22e">mask&lt;/span>= &lt;span style="color:#a6e22e">att_mask&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">x&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dropout&lt;/span>(&lt;span style="color:#ae81ff">0.3&lt;/span>)(&lt;span style="color:#a6e22e">x&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">output&lt;/span>= &lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">TimeDistributed&lt;/span>(&lt;span style="color:#a6e22e">layers&lt;/span>.&lt;span style="color:#a6e22e">Dense&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#a6e22e">activation&lt;/span>=&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>&lt;span style="color:#a6e22e">sigmoid&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">&amp;#39;&lt;/span>))(&lt;span style="color:#a6e22e">x&lt;/span>,&lt;span style="color:#a6e22e">mask&lt;/span>= &lt;span style="color:#a6e22e">att_mask&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">model&lt;/span>= &lt;span style="color:#a6e22e">tf&lt;/span>.&lt;span style="color:#a6e22e">keras&lt;/span>.&lt;span style="color:#a6e22e">Model&lt;/span>(&lt;span style="color:#a6e22e">inputs&lt;/span>= [&lt;span style="color:#a6e22e">inputs&lt;/span>,&lt;span style="color:#a6e22e">att_mask&lt;/span>],&lt;span style="color:#a6e22e">outputs&lt;/span>= &lt;span style="color:#a6e22e">output&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">model&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">model&lt;/span>= &lt;span style="color:#a6e22e">create&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">model&lt;/span>.&lt;span style="color:#a6e22e">summary&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;br>
+&lt;p>
+&lt;figure id="figure-architecture">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/architecture_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Architecture
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>In this architecture there are two bidirectional LSTM layers each followed by a dropout layer with a probability of 0.3, the output of the second layer is provided as input for the dense layer which is timely distributed.&lt;/p>
+&lt;br>
+&lt;h2 id="evaluation-on-different-loss-function">Evaluation on different loss function&lt;/h2>
+&lt;h4 id="11-simple-bce-loss">1.1 Simple BCE loss&lt;/h4>
+&lt;p>Binary cross-entropy loss is the average logistic loss on every prediction. Lets look at the output generated by this loss on validation dataset:&lt;/p>
+&lt;p>
+&lt;figure id="figure-output">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/simple_BCE_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Output
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>Here the input is labeled as 1 when the output prediction is more than 0.5. Now lets look at the accuracy of train and test set on different value of thresholds:&lt;/p>
+&lt;p>
+&lt;figure id="figure-accuracy-vs-threshold">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/simple_BCE_plot_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Accuracy vs Threshold
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>At threshold 0.6 the train and test accuracy is 80% and 60% respectively.&lt;/p>
+&lt;p>Assume you have a &amp;ldquo;Atalanta 23&amp;rdquo; transaction with a store number of 23. It has 11 characters, including whitespace; we&amp;rsquo;re computing the value of loss for each of these characters, and we&amp;rsquo;re assuming the average loss for this transaction is 0.5. Because there are more non-store number characters than store number characters here, the average loss value shifts toward non-store number characters. As a result, when the model performs incorrect classification on store number characters, its contribution to the average loss remains small, resulting in a small penalization of models, so the model does not focus on predicting the store number character, but only on predicting non-store-number characters.&lt;/p>
+&lt;br>
+&lt;h4 id="12-weighted-bce-loss">1.2 Weighted BCE loss&lt;/h4>
+&lt;p>We will generate a weight value for both labels 0 and 1 so that more weights are assigned to the less often label, and these weights are multiplied to the loss value of that label, to remove the biases of average loss value toward the non-store number character. As a result, assigning more weight to the less common label 1 helps to ensure that both labels receive equal attention. The output it produced at threshold 0.5, as well as accuracies at other thresholds:&lt;/p>
+&lt;p>
+&lt;figure id="figure-output">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/WBCE_output_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Output
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;p>
+&lt;figure id="figure-accuracy-vs-threshold">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/WBCE_output_plot_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Accuracy vs Threshold
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>The accuracy is poorer than compared to simple BCE loss, it has the maximum test accuracy of 35% at threshold 0.6.&lt;/p>
+&lt;br>
+&lt;h4 id="13-simple-bce-loss-after-removing-the-names">1.3 Simple BCE loss after removing the names&lt;/h4>
+&lt;p>Taking the names out of the transaction is another technique to eliminate the imbalance. Almost the majority of the names in the transaction are not store number characters, raising the number of negative labels. We can achieve some equilibrium between label non-store number characters and store number characters by deleting names.&lt;/p>
+&lt;p>
+&lt;figure id="figure-output">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/RE_output_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Output
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;p>
+&lt;figure id="figure-accuracy-vs-threshold">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/RE_plot_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Accuracy vs Threshold
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>It worked better than weighted BCE loss producing a test accuracy of 55% at a threshold of 0.6. But still, simple BCE loss outperforms it by 5% accuracy on test data.&lt;/p>
+&lt;br>
+&lt;h5 id="14-dice-loss">1.4 Dice Loss&lt;/h5>
+&lt;p>
+&lt;figure id="figure-dice-loss-working">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/DL_work_entity_extractor.png#center" alt="(Conventional Method)" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Dice Loss Working
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>We were attempting to calculate a loss value for each character in the logistic loss, however, the characters will be unaware of their relationships. Let&amp;rsquo;s say there are four store number characters in a transaction, three of which are labeled 1, and one is labeled 0. Although the logistic loss function performed admirably in this case, the actual output is inaccurate. Because the logistic loss function is unaware of the link between the characters&amp;rsquo; loss values, it will simply attempt to minimize the average loss, which is contradictory to the goal. At the same time, it just considers character level loss and ignores the expected store number as a whole. The best loss function for this case appears to be Dice loss which increases the overlap between the predicted sequence of output to the actual output.&lt;/p>
+&lt;p>
+&lt;figure id="figure-output">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/dice_loss_WNR_output_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Output
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>As we can see the model is predicting unwanted sequence of characters, due to which it&amp;rsquo;s accuracy has been reduced drastically. The test accuracy is only 30%.&lt;/p>
+&lt;p>
+&lt;figure id="figure-accuracy-vs-threshold">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/DL_WNR_output_plot_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Accuracy vs Threshold
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h4 id="15-dice-loss-loss-after-removing-the-names">1.5 Dice Loss loss after removing the names&lt;/h4>
+&lt;p>The discrepancy between the transaction and the store number is relatively little when the names are removed from the transaction. Dice loss works by increasing the intersection between the actual and anticipated sequences of store number characters. By removing names from the transaction, the length of the transaction is lowered, which minimizes the number of undesirable sequence combinations that we want our dice loss to avoid.&lt;/p>
+&lt;p>
+&lt;figure id="figure-output">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/DL_NR_output_plot_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Output
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>We attained the highest accuracy of 72% on the test dataset by doing so, making it the best strategy for training this dataset.&lt;/p>
+&lt;p>
+&lt;figure id="figure-accuracy-vs-threshold">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/plot_entity_extractor.png#center" alt="Alt Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Accuracy vs Threshold
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h1 id="traning-parameter">Traning Parameter&lt;/h1>
+&lt;p>The BCE loss was trained for 1000 epochs with a learning rate of 1e-5. Similarly, with an initial learning rate of 1e-4, the dice loss was trained for 200 epochs. The Adam optimizer was employed, with a polynomial learning rate decay and the first 100 steps of the models operating as warn steps.&lt;/p></description></item><item><title>Transactions entity extractor</title><link>https://gautammilan.github.io/project/entity-extraction/</link><pubDate>Mon, 03 Jan 2022 21:38:54 +0545</pubDate><guid>https://gautammilan.github.io/project/entity-extraction/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>Because most of today&amp;rsquo;s world has been digitalized, instead of recording transactions in journals, people record them on their computers. In many circumstances, these transactions contain critical information about the parties involved, thus businesses attempt to obtain it through a variety of means. In this study, we will examine one such transaction and attempt to acquire embedded information within it using a deep learning model.&lt;/p>
+&lt;p>
+&lt;figure id="figure-conventional-method">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://gautammilan.github.io/images/dataset_image_entity_extractor.png#center" alt="Conventional Method" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Conventional Method
+&lt;/figcaption>&lt;/figure>
+&lt;/p>
+&lt;p>So, in this study, I created a model that takes a transaction as an input and generates its store number. While highlighting each character and evaluating whether or not it is a store number. Because character LSTM is capable of doing this task, a char-LSTM model is the best solution for handling this problem, and we will use it.&lt;/p>
+&lt;p>&lt;a href="https://github.com/gautammilan/Transactions-entity-extractor" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p>
+&lt;p>The following article details the steps I took to address this issue:&lt;/p>
+&lt;p>&lt;a href="https://gautammilan.github.io/post/entity-extraction/" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Facebook Messaging Bot</title><link>https://gautammilan.github.io/post/fb-bot/</link><pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/post/fb-bot/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>I have written an medium article examplaning the things that one need to consider when trying to train on your own messages. Please visit here:
+&lt;br>&lt;/p>
+&lt;p>&lt;a href="https://github.com/gautammilan/Char-RNN" target="_blank" rel="noopener">Code&lt;/a>&lt;/p></description></item><item><title>Facebook Messaging Bot</title><link>https://gautammilan.github.io/project/facebook-messaging-bot/</link><pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/project/facebook-messaging-bot/</guid><description>&lt;!-- ## Introduction -->
+&lt;p>I used my Facebook conversations to train the RNN model. So the model will aim to mimic how I converse with people, only by providing the initial character for an input, say &amp;lsquo;h,&amp;rsquo; will generate an entire message beginning with the character &amp;lsquo;h,&amp;rsquo; such as &amp;ldquo;how are you doing today?&amp;rdquo;. Because the model was trained on a single character, it may now be trained in any language.
+&lt;br>&lt;/p>
+&lt;p>&lt;a href="https://github.com/gautammilan/Char-RNN" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p>
+&lt;p>The following article details the steps I took to address this problem:&lt;/p>
+&lt;p>&lt;a href="https://medium.com/@milangautam5198/things-you-need-to-take-care-when-training-rnn-on-your-facebook-messages-befbe3dea175" target="_blank" rel="noopener">Article&lt;/a>&lt;/p></description></item><item><title>Proposal Recommendation and Deployment</title><link>https://gautammilan.github.io/project/donor-choose/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/project/donor-choose/</guid><description>&lt;p>DonorsChoose is a United States-based nonprofit organization that allows individuals to donate directly to public school classroom projects. According to last year data around 500,000 proposals were sent by teachers all around the world to DonorsChoose hoping to get the donation for their respective projects. Organization goes through every single project proposal to select those proposals which have a higher probability of getting donations. After selecting the project Donor Choose organization will display the selected project on their website allowing the donor to go through the project which they are likely to donate. Here the main problem is going through all the project proposal equired a large number of resources and cost a tremendous amount of money.&lt;/p>
+&lt;br>
+&lt;h1 id="objective">Objective&lt;/h1>
+&lt;p>To apply deep learning model in order to automize the task of selecting those proposal which have high possibility of getting donation. Model will produce an output for every single proposal, where output &amp;lsquo;1&amp;rsquo; indicates that the proposal has high chance of acceptance and &amp;lsquo;0&amp;rsquo; indicates the rejection probability&lt;/p>
+&lt;br>
+&lt;h1 id="deployment">Deployment&lt;/h1>
+&lt;p>I have done the deployment using streamlit, inorder to get more information please visit the website here&lt;/p>
+&lt;p>&lt;a href="https://share.streamlit.io/gautammilan/proposal-recommendation/main/website.py" target="_blank" rel="noopener">https://share.streamlit.io/gautammilan/proposal-recommendation/main/website.py&lt;/a>&lt;/p></description></item><item><title>Text Classification using CNN</title><link>https://gautammilan.github.io/project/text-classification-cnn/</link><pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate><guid>https://gautammilan.github.io/project/text-classification-cnn/</guid><description>&lt;p>After learning that an NLP task might be performed using CNN, I was fascinated. So, throughout the study, we will classify emails using CNN. The dataset includes roughly 18000 emails divided into 20 categories such as sports, health, religion, and so on. The network&amp;rsquo;s core backbone is the 1D convolution neural network, which is used for classification.&lt;/p>
+&lt;p>&lt;a href="https://github.com/gautammilan/Text-classification-using-CNN" target="_blank" rel="noopener">Github Code&lt;/a>&lt;/p></description></item></channel></rss>
