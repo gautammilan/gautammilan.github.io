@@ -55,7 +55,7 @@ taxonomies:
   category: categories
   publication_type: publication_types
   author: authors
-  authorAvator: /images/avatar.png
+  # authorAvator: /images/avatar.png
 markup:
   _merge: deep
 related:
