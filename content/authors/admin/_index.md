@@ -6,10 +6,13 @@ title: Milan Gautam
 superuser: true
 
 # Role/position/tagline
-role: Final Year Student
+role: AI Engineer
 
 # Organizations/Affiliations to show in About widget
 organizations:
+- name: Palua.AI 
+  url: https://palua.ai/
+
 - name: Tribhuvan University, Institute of Engineering, Paschimanchal Campus
   url: https://www.ioepas.edu.np/
 
@@ -53,9 +56,9 @@ social:
 # Link to a PDF of your resume/CV.
 # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.toml`, 
 # and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: uploads/resume.pdf
+# - icon: cvrfdsfsd
+  # icon_pack: ai
+  # link: uploads/resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
@@ -64,9 +67,9 @@ email: ""
 highlight_name: true
 ---
 
-Hello, my name is Milan Gautam, and I am an undergraduate computer engineering student at the Institute of Engineering Paschimanchal Campus. I've always been fascinated by computers and robots, and my curiosity was piqued after viewing the film Robot, in which a humanoid robot gains the ability to think like a person. After learning about artificial intelligence on YouTube and its limitless possibilities for connecting a computer with emotions, I know this is the path I want to go on with my career. Since then, I've worked on various projects and honed crucial skills ranging from data preparation to hyperparameter tuning.
+I am from Nepal, where I have completed my bachelor's in computer engineering from [Tribhuvan University, Institute of Engineering, Paschimanchal Campus](https://www.ioepas.edu.np/). 
 
-Currently, I am working on a dream project of developing a cutting-edge language model in my native Nepali language.
+Currently, I am working at [palwa.ai](https://palua.ai/) as an AI engineer, where I developed the first ever state-of-the-art Nepali language model trained on a large dataset along with the Nep-gLUE benchmark. I am now working on active learning research for both computer vision and NLP problems to make the data annotation process faster, increase label efficency, and reduce the cost of annotation.
 
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+<!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}. -->

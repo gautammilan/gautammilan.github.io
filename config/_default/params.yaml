@@ -6,7 +6,7 @@
 # Appearance
 
 theme: minimal
-day_night: true
+day_night: false
 font: ''
 font_size: L
 
@@ -20,7 +20,7 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: milanmgautam5198@gmail.com
+email: milanmgautam193@gmail.com
 address:
   street: Tandi, East-West Highway
   city: Chitwan
@@ -32,6 +32,7 @@ address:
 #  latitude: '37.4275'
 #  longitude: '-122.1697'
 #directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+
 #office_hours:
 #  - 'Monday 10:00 to 13:00'
 #  - 'Wednesday 09:00 to 10:00'
@@ -50,9 +51,10 @@ address:
   #  name: Chat on Keybase
   #  link: 'https://keybase.io/'
   #- icon: comments
-  #  icon_pack: fas
-  #  name: Discuss on Forum
-  #  link: 'https://discourse.gohugo.io'
+
+  # icon: cvrfdsfsd
+  # icon_pack: ai
+  # link: uploads/resume.pdf'
 
 # Site header
 
@@ -146,3 +148,5 @@ cms:
 icon:
   pack:
     ai: true
+  
+
