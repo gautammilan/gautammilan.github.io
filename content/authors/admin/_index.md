@@ -69,7 +69,7 @@ highlight_name: true
 
 I am from Nepal, where I have completed my bachelor's in computer engineering from [Tribhuvan University, Institute of Engineering, Paschimanchal Campus](https://www.ioepas.edu.np/). 
 
-Currently, I am working at [palwa.ai](https://palua.ai/) as an AI engineer, where I developed the first ever state-of-the-art Nepali language model trained on a large dataset along with the Nep-gLUE benchmark. I am now working on active learning research for both computer vision and NLP problems to make the data annotation process faster, increase label efficency, and reduce the cost of annotation.
+Currently, I am working at [Palua.Ai Ltd](https://palua.ai/) as an AI engineer, where I developed the first ever state-of-the-art Nepali language model trained on a large dataset along with the Nep-gLUE benchmark. I am now working on active learning research for both computer vision and NLP problems to make the data annotation process faster, increase label efficency, and reduce the cost of annotation.
 
 
 <!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}. -->
